@@ -1,0 +1,38 @@
+# single line comment
+# target : all dependent object files
+# system command to get target
+
+CC = gcc
+target = main.o stud_add.o stud_del.o stud_file.o stud_rev.o stud_show.o stud_sort.o stud_modif.o
+
+student: ${target}
+	${CC} ${target} -o student
+
+main.o: main.c
+	${CC} -c main.c
+
+stud_add.o: stud_add.c
+	${CC} -c stud_add.c
+
+stud_del.o: stud_del.c
+	${CC} -c stud_del.c
+
+stud_file.o: stud_file.c
+	${CC} -c stud_file.c
+
+stud_rev.o: stud_rev.c
+	${CC} -c stud_rev.c
+
+stud_show.o: stud_show.c
+	${CC} -c stud_show.c
+
+stud_sort.o: stud_sort.c
+	${CC} -c stud_sort.c
+
+stud_modif.o: stud_modif.c
+	${CC} -c stud_modif.c
+
+clean:
+	@echo "cleaning up...."
+	@rm -f *.o exe
+
